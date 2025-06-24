@@ -11,7 +11,7 @@ import SignUp from './frontend/pages/Auth/SignUp';
 import Home from './frontend/pages/Dashboard/Home';
 import Income from './frontend/pages/Dashboard/Income';
 import Expense from './frontend/pages/Dashboard/Expense';
-import UserProvider from './frontend/context/userContext';
+import UserProvider from './frontend/context/UserContext';
 
 function App() {
   return (

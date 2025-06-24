@@ -5,7 +5,7 @@ import Input from '../../components/Inputs/Input';
 import { validateEmail } from '../../utils/helper';
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPath';
-import { UserContext } from '../../context/userContext';
+import { UserContext } from '../../context/UserContext';
 
 
 function Login() {
@@ -47,6 +47,7 @@ function Login() {
         setError("Something went wrong. Please try again");
       }
     }
+    
 
 
 
