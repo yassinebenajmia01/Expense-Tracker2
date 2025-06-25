@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export const validateEmail = (email) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
@@ -23,10 +25,9 @@ export const addThousandsSeparator = (num) =>{
   ? `${formattedInteger}.${fractionPart}`
   : formattedInteger;
 };
-export const prepareExpenseBarChartData = (data) => {
-  console.log("Raw Data in prepareExpenseBarChartData:", data);
+export const prepareExpenseBarChartData = (data= []) => {
 
-  // Example of returning formatted data:
+  
   const formattedData = data.map(item => ({
     month: item.date ? item.date.slice(0, 7) : "Unknown", // Extract month from date
     amount: item.amount || 0,
@@ -35,3 +36,15 @@ export const prepareExpenseBarChartData = (data) => {
   console.log("Formatted Data:", formattedData); // Check the processed data
   return formattedData;
 };
+
+export const prepareIncomeBarChartData=(data=[] )=>{
+  const sortedData=[...data].sort((a,b) => new Date(a.date) - new Date(b.date) );
+  const chartData=sortedData.map((item) => ({
+    month:moment(item?.date).format("Do MMM "),
+    amount:item?.amount,
+    source:item?.source,
+  })) ;
+  return chartData;
+};
+
+
